@@ -216,3 +216,20 @@ if res:
     print(*res)
 else:
     print("Нет слов с цифрами.")
+
+print("\n")
+
+'''Нужно:
+numbers = [5, 1, 2, 3, 4, 0]
+найти первую последовательность из 4 подряд возрастающих чисел
+(каждое следующее строго больше предыдущего)
+вывести индекс первого элемента
+если нет — вывести "NO INCREASING 4" '''
+
+numbers = [5, 1, 2, 3, 4, 0]
+for index in range(len(numbers) - 3):
+    if numbers[index] < numbers[index + 1] < numbers[index + 2] < numbers[index + 3]:
+        print(index)
+        break
+else:
+    print("NO INCREASING 4")
