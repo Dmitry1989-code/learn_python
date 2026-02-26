@@ -233,3 +233,33 @@ for index in range(len(numbers) - 3):
         break
 else:
     print("NO INCREASING 4")
+
+print("\n")
+
+'''Задача:
+У нас есть список attempts, где:
+1 = успех
+0 = неуспех
+Нужно найти индекс начала самой длинной серии подряд идущих единиц.
+Если единиц нет — вывести "NO SERIES"'''
+
+attempts = [0, 1, 0, 0, 1, 1, 1, 0]
+curr = 0
+best = 0
+start = 0
+start_best = None
+for i, value in enumerate(attempts):
+    if value == 1:
+        if curr == 0:
+            start = i
+        curr += 1
+        if curr > best:
+            best = curr
+            start_best = start
+        else:
+            curr = 0
+
+if start_best is not None:
+    print(start_best)
+else:
+    print("NO SERIES")
